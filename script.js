@@ -72,7 +72,7 @@
    visuals({beats:heroBeats},0);
  }
 
- function path(s,index){const version='v21';return `assets/frames/${version}/scene${s.index}/${String(index+1).padStart(3,'0')}.webp`}
+ function path(s,index){const version=s.index===3?'v22':'v21';return `assets/frames/${version}/scene${s.index}/${String(index+1).padStart(3,'0')}.webp`}
  function requestFrame(s,index){
    index=clamp(index,0,s.frames-1);
    if(s.cache.has(index)||s.pending.has(index))return;
