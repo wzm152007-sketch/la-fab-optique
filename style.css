@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap');
+
+:root{--navy:#061a2c;--navy2:#102b47;--copper:#c99479;--cream:#f5eee6;--white:#fdfaf6}
+*{box-sizing:border-box}html{scroll-behavior:auto;scroll-padding-top:0}body{margin:0;background:var(--navy);color:var(--white);font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}a{text-decoration:none;color:inherit}button{font:inherit}::selection{background:var(--copper);color:var(--navy)}
+#reading-progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--copper);z-index:90;transform-origin:left;will-change:transform}
+.site-header{position:fixed;inset:0 0 auto;z-index:80;height:88px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(22px,5vw,96px);gap:26px;transition:background .25s ease,box-shadow .25s ease}.site-header.scrolled{background:rgba(6,26,44,.92);box-shadow:0 12px 25px #061a2c44;backdrop-filter:blur(12px)}
+.brand{display:flex;align-items:center;gap:18px;flex-shrink:0;font-family:'Outfit',sans-serif;font-weight:500;font-size:16px;letter-spacing:.18em;line-height:1.1}.brand small{display:block;font-size:9px;margin-top:6px;letter-spacing:.28em}.brand-icon{display:flex;align-items:center;position:relative;width:58px;height:44px}.brand-icon i{display:block;position:absolute;width:35px;height:35px;border:1.5px solid var(--copper);border-radius:50%;left:0}.brand-icon i+i{left:22px}.desktop-nav{display:flex;gap:clamp(18px,2vw,40px)}.desktop-nav a{font-size:11px;letter-spacing:.12em;color:#fffdf3b9;transition:color .2s}.desktop-nav a:hover{color:var(--copper)}.header-cta{border:1px solid #faf7f080;padding:14px 17px;font:500 10px 'DM Sans',sans-serif;letter-spacing:.12em;white-space:nowrap;transition:background .2s}.header-cta:hover{background:#ffffff20}.header-cta span{margin-left:10px;color:var(--copper)}
+.scroll-scene{height:420vh;height:420svh;position:relative;background:var(--navy)}.scroll-scene.is-hero{height:440vh;height:440svh}.pin-stage{position:sticky;top:0;overflow:hidden;height:100vh;height:100svh;background:var(--navy);isolation:isolate;contain:paint}
+.story-canvas,.video-fallback,.scene-shade{position:absolute;inset:0;width:100%;height:100%}.story-canvas{z-index:1;display:block;opacity:0;transition:opacity .25s ease}.pin-stage.canvas-ready .story-canvas{opacity:1}.video-fallback{object-fit:cover;z-index:0}.scene-shade{z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(2,15,28,.78),rgba(3,18,32,.19) 70%),linear-gradient(0deg,rgba(2,15,28,.68) 0%,transparent 26%)}
+.scene-outline{z-index:3;position:absolute;right:clamp(22px,5vw,96px);top:124px;font:300 13px 'Outfit',sans-serif;letter-spacing:.17em;color:#fffc}.scene-outline span{color:var(--copper);margin:0 10px}
+.story-beat{z-index:5;position:absolute;top:50%;left:clamp(25px,8vw,160px);transform:translate3d(0,calc(-42% + 22px),0);max-width:min(780px,76vw);opacity:0;pointer-events:none;will-change:opacity,transform;transition:none}.story-beat.is-visible{pointer-events:auto}.story-beat h1,.story-beat h2,.section-heading h2,.about h2,.contact h2,.story-divider h2{font-family:'Outfit',sans-serif;font-weight:300;letter-spacing:-.045em;line-height:1.02;margin:18px 0 24px;font-size:clamp(58px,7.8vw,132px)}h1 em,h2 em{font-weight:300;font-style:normal;color:var(--copper)}.kicker{font:500 11px 'Outfit',sans-serif;letter-spacing:.25em;text-transform:uppercase;color:var(--copper)}.kicker b{font-weight:400;margin:0 5px}.beat-description{font-size:clamp(15px,1.45vw,20px);font-weight:300;line-height:1.65;max-width:500px;color:#fffdf2d9}
+.scroll-ui{position:absolute;left:clamp(25px,8vw,160px);right:clamp(25px,8vw,160px);bottom:clamp(28px,4vw,58px);z-index:7;display:flex;align-items:center;gap:24px;pointer-events:none}.scroll-ui>span:first-child{font:500 10px 'Outfit',sans-serif;letter-spacing:.22em;color:#fffde7d6;white-space:nowrap}.meter{height:2px;flex:1;background:#fff7ef4b;min-width:30px;overflow:hidden}.meter-fill{height:100%;width:100%;background:var(--copper);transform:scaleX(0);transform-origin:left}.scene-percentage{font:500 12px 'Outfit',sans-serif;min-width:42px;text-align:right;color:#e9d3c5;letter-spacing:.12em}
+.story-divider{min-height:78vh;min-height:78svh;background:var(--cream);color:var(--navy);padding:120px 24px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}.story-divider>span:first-child{font:500 10px 'Outfit',sans-serif;letter-spacing:.25em;color:#a56e50}.story-divider h2{font-size:clamp(53px,7vw,105px);margin:23px 0}.story-divider p{font-size:16px;color:#565f66;line-height:1.6}.divider-arrow{color:#ba856c;margin-top:34px;font-size:27px}
+.partners{background:linear-gradient(150deg,#061a2c,#103354);padding:clamp(95px,9vw,165px) clamp(25px,9vw,160px);position:relative}.partners:before{position:absolute;inset:0;content:'';background:radial-gradient(circle at 82% 11%,#b88a6740,transparent 38%);pointer-events:none}.section-heading{position:relative;text-align:center;margin:0 auto 60px;max-width:700px}.section-heading h2{font-size:clamp(64px,7.5vw,115px);margin:18px 0}.section-heading>p:last-child{color:#cfdae4;font-size:15px;line-height:1.7}.brand-grid{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid #ffffff43;border-left:1px solid #ffffff43}.brand-card{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-height:230px;gap:13px;border-right:1px solid #ffffff43;border-bottom:1px solid #ffffff43;padding:clamp(25px,3vw,50px);transition:background .25s ease;outline-offset:-4px}.brand-card:hover,.brand-card:focus-visible{background:#ffffff13}.brand-card>span{font:500 10px 'Outfit',sans-serif;color:var(--copper);letter-spacing:.2em}.brand-card h3{font:400 clamp(29px,4vw,58px) 'Outfit',sans-serif;letter-spacing:.045em;margin:0}.brand-card h3 small{display:block;font-size:.35em;letter-spacing:.24em}.brand-card p{font-size:13px;color:#cbd4df;margin:0}.section-note{font-size:11px;color:#aab6c4;text-align:center;margin-top:35px}
+.about{display:grid;grid-template-columns:.82fr 1.18fr;background:var(--cream);color:var(--navy);min-height:690px}.about-index{background:radial-gradient(circle at 50% 50%,#254561,#071f33 65%);color:#cf9577;display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:440px;font:300 clamp(52px,7vw,100px) 'Outfit',sans-serif;letter-spacing:.03em}.about-index span{font-size:11px;letter-spacing:.32em;margin-top:12px}.about-content{padding:clamp(70px,9vw,150px) clamp(30px,7vw,120px);display:flex;flex-direction:column;justify-content:center}.about-content h2{font-size:clamp(47px,5vw,83px)}.about-content>p:not(.kicker){font-size:16px;line-height:1.85;color:#51616a;max-width:550px}.about-services{margin-top:32px;display:grid;gap:18px}.about-services span{padding:0 0 17px;border-bottom:1px solid #11283b30;font:500 11px 'Outfit',sans-serif;letter-spacing:.14em}
+.contact{background:#0b2741;color:var(--cream);text-align:center;padding:clamp(95px,10vw,160px) 24px}.contact h2{font-size:clamp(65px,8vw,134px);margin:26px 0}.address{font-size:16px;font-weight:300;color:#d3dfe4}.contact-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:45px auto 28px}.contact-actions a{font:500 11px 'Outfit',sans-serif;letter-spacing:.12em;border:1px solid #ce9d81;padding:19px 22px;transition:background .2s,color .2s}.contact-actions a:first-child{background:var(--copper);color:var(--navy)}.contact-actions a:hover{background:#e6b59a;color:var(--navy)}.contact-actions span{margin-left:18px}.email{font-size:13px;color:#a5b7c7}footer{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:34px clamp(24px,5vw,96px);font:500 10px 'Outfit',sans-serif;letter-spacing:.11em;color:#c3ced3}
+@media(max-width:800px){.site-header{height:79px;padding:0 19px}.desktop-nav{display:none}.header-cta{font-size:10px;padding:12px 9px}.brand{gap:8px;font-size:13px}.brand small{font-size:8px}.brand-icon{transform:scale(.8);transform-origin:left;width:48px}.scene-outline{top:99px;right:25px}.scroll-scene,.scroll-scene.is-hero{height:390vh;height:390svh}.story-beat{left:7%;max-width:89vw;top:auto;bottom:125px;transform:translate3d(0,25px,0)}.story-beat h1,.story-beat h2{font-size:clamp(49px,10.6vw,78px);line-height:1.04;letter-spacing:-.04em}.beat-description{font-size:15px;max-width:90%;margin-bottom:0}.scene-shade{background:linear-gradient(0deg,#06192be8 2%,#06192b7a 37%,#06192b10 76%)}.scroll-ui{left:7%;right:7%;bottom:36px;gap:13px}.scroll-ui>span:first-child{font-size:9px;letter-spacing:.08em;max-width:40%;white-space:normal;line-height:1.4}.scene-percentage{font-size:10px;min-width:36px}.brand-grid{grid-template-columns:1fr}.brand-card{min-height:160px}.about{grid-template-columns:1fr}.about-index{min-height:310px}.about-content{padding:70px 7%}.contact-actions{flex-direction:column;max-width:400px}.contact h2{font-size:clamp(62px,11vw,93px)}footer{justify-content:center;flex-wrap:wrap;text-align:center}}
+@media(max-width:390px){.header-cta{font-size:8px}.brand{font-size:11px}.story-beat h1,.story-beat h2{font-size:46px}.scroll-ui>span:first-child{max-width:48%}}
+@media(prefers-reduced-motion:reduce){.site-header,.story-canvas,.brand-card,.contact-actions a{transition:none}}
+
+/* V5: call-to-actions arrondis, aucune carte rectangulaire autour des partenaires. */
+.header-cta{border:0;border-bottom:1px solid rgba(201,148,121,.8);padding:12px 0;border-radius:0;transition:color .25s ease,border-color .25s ease}
+.header-cta:hover{background:transparent;color:var(--copper);border-color:var(--cream)}
+.brand-grid{border:0;gap:clamp(35px,5vw,90px) clamp(24px,5vw,90px);padding:20px 0}
+.brand-card{border:0;min-height:260px;align-items:center;justify-content:center;text-align:center;padding:30px 16px 35px;gap:22px;background:transparent;position:relative;transition:transform .3s ease}
+.brand-card:hover{background:transparent;transform:translateY(-5px)}
+.brand-card::after{content:"";position:absolute;width:min(120px,38%);height:1px;background:rgba(201,148,121,.55);bottom:0;left:50%;transform:translateX(-50%)}
+.brand-card .brand-count{font:500 10px 'Outfit',sans-serif;letter-spacing:.22em;color:var(--copper)}
+.brand-card .brand-logo-wrap{width:min(100%,390px);height:120px;display:flex;align-items:center;justify-content:center}
+.brand-card .brand-logo-wrap img{display:block;max-width:85%;max-height:110px;object-fit:contain;filter:drop-shadow(0 8px 22px rgba(0,0,0,.12));transition:transform .35s ease,opacity .35s ease}
+.brand-card:hover .brand-logo-wrap img{transform:scale(1.055);opacity:.85}
+.brand-card p{max-width:320px;font-size:13px;line-height:1.6}
+.contact-actions a{border-radius:999px;border:1px solid var(--copper);padding:18px 29px}
+.contact-actions a:last-child{border-color:rgba(245,238,230,.5)}
+.contact-actions a:hover{background:#e6b59a;color:var(--navy)}
+.location-map{background:#071b2f;color:var(--cream)}
+.map-intro{display:flex;align-items:end;justify-content:space-between;gap:24px;padding:95px clamp(25px,8vw,150px) 45px}
+.map-intro h2{font:300 clamp(44px,6vw,95px)/1.1 'Outfit',sans-serif;letter-spacing:-.05em;margin:12px 0 22px}
+.map-intro h2 em{font-style:normal;color:var(--copper)}
+.map-intro p:not(.kicker){font:300 15px 'DM Sans',sans-serif;color:#becbd5;line-height:1.65;margin:0}
+.map-direction{font:500 11px 'Outfit',sans-serif;letter-spacing:.17em;border-bottom:1px solid var(--copper);padding:12px 0;color:var(--cream);white-space:nowrap;transition:color .2s ease}
+.map-direction:hover{color:var(--copper)}
+.google-map{display:block;border:0;width:100%;height:clamp(360px,55vh,620px);filter:grayscale(.35)}
+@media(max-width:800px){
+  .brand-grid{gap:22px}
+  .brand-card{min-height:220px;padding:24px 12px 32px}
+  .brand-card .brand-logo-wrap{height:100px}
+  .brand-card .brand-logo-wrap img{max-height:90px}
+  .map-intro{padding:75px 7% 35px;display:flex;align-items:start;flex-direction:column}
+  .map-direction{margin-top:6px;white-space:normal}
+  .google-map{height:430px}
+}
+@media(prefers-reduced-motion:reduce){.brand-card,.brand-card .brand-logo-wrap img{transition:none}}
+
+/* V6 — nouveau logo Fab fourni : en-tête et signature de bas de page. */
+.brand-modernisee{display:flex;align-items:center;justify-content:flex-start;min-width:0;width:clamp(155px,16vw,250px);height:100%;flex-shrink:0;line-height:1}
+.brand-modernisee img{display:block;object-fit:contain;object-position:left center;width:100%;height:clamp(55px,5.3vw,78px);filter:drop-shadow(0 0 7px rgba(237,185,128,.13));transition:filter .3s ease,transform .3s ease}
+.brand-modernisee:hover img{filter:drop-shadow(0 0 14px rgba(237,185,128,.32));transform:scale(1.025)}
+.footer-brand{display:flex;align-items:center;width:135px;min-width:105px}
+.footer-brand img{display:block;width:100%;height:auto;object-fit:contain}
+@media(max-width:800px){.brand-modernisee{width:clamp(114px,32vw,168px);gap:0}.brand-modernisee img{width:100%;height:65px}.header-cta{font-size:9px;letter-spacing:.035em}.footer-brand{margin:4px auto 10px}}
+@media(max-width:390px){.brand-modernisee{width:112px}.header-cta{font-size:8px;letter-spacing:0}}
+@media(prefers-reduced-motion:reduce){.brand-modernisee img{transition:none}}
+
+/* V7 — Clean cinematic screen; no scene index, numerical % or HUD meter. */
+#reading-progress,.scene-outline,.scroll-ui,.meter,.meter-fill,.scene-percentage{display:none!important}
+.pin-stage{background:#061a2c}
+.story-beat{max-width:min(740px,80vw)}
+@media(max-width:800px){.story-beat{bottom:clamp(75px,12svh,135px)}.story-beat h1,.story-beat h2{font-size:clamp(44px,10.3vw,76px)}}
+
+/* V8 — remplacement du lettrage LA FAB’ par le logo lunette fourni */
+.about-logo-panel{position:relative;overflow:hidden;isolation:isolate;padding:clamp(25px,5vw,65px);gap:0;text-align:center}
+.about-logo-panel::before{content:"";position:absolute;inset:-20%;z-index:-1;background:radial-gradient(circle at 50% 40%,rgba(182,137,96,.09),transparent 52%);pointer-events:none}
+.about-logo-panel img{display:block;width:min(92%,650px);max-width:100%;height:auto;max-height:360px;object-fit:contain;filter:drop-shadow(0 0 24px rgba(222,174,114,.12));transition:transform .6s ease,filter .6s ease}
+.about-logo-panel:hover img{transform:scale(1.035);filter:drop-shadow(0 0 33px rgba(222,174,114,.2))}
+.about-logo-panel span{font:500 11px 'Outfit',sans-serif;letter-spacing:.36em;margin-top:8px;color:#cc9a7c}
+@media(max-width:800px){.about-logo-panel{min-height:350px;padding:35px 22px}.about-logo-panel img{width:min(90%,530px);max-height:300px}.about-logo-panel span{font-size:9px;letter-spacing:.25em}}
+@media(prefers-reduced-motion:reduce){.about-logo-panel img{transition:none}}
+
+/* V9 : direction typographique des titres dorés, prête pour Saint Carell.
+   Les fichiers Saint Carell PERSONAL USE ONLY ne sont PAS distribués,
+   car le site d'un opticien est une utilisation commerciale.
+   Avec la licence adaptée, déposer une version Web autorisée dans
+   assets/fonts/SaintCarell-Licensed.woff2 ; la feuille l'utilisera. */
+
+@font-face {
+  font-family: 'Saint Carell Web';
+  src: url('assets/fonts/SaintCarell-Licensed.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+:root { --font-gold:'Saint Carell Web','Cormorant Garamond',Georgia,serif; }
+/* Sur les grands titres uniquement, pour préserver la lisibilité des textes courants. */
+.story-beat h1 em,.story-beat h2 em,
+.section-heading h2 em,.about-content h2 em,.contact h2 em,
+.map-intro h2 em {
+  font-family:var(--font-gold);
+  font-weight:400;
+  font-style:normal;
+  letter-spacing:-.02em;
+  line-height:1.04;
+  text-wrap:balance;
+}
+/* Accents cuivrés plus discrets : Saint Carell y est lisible même en petit. */
+.story-divider>span:first-child,.about-logo-panel span {
+  font-family:var(--font-gold);
+  font-weight:500;
+  letter-spacing:.045em;
+  font-size:clamp(15px,1.6vw,21px);
+}
+/* Les légendes de navigation et les boutons restent en sans serif pour l'accessibilité. */
+@media (max-width:800px) {
+ .story-beat h1 em,.story-beat h2 em,.section-heading h2 em,.about-content h2 em,.contact h2 em,.map-intro h2 em {letter-spacing:-.025em;}
+ .about-logo-panel span{font-size:16px;letter-spacing:.06em}
+}
+
+/* V10 — Avis Google et galerie vidéo éditoriale. Aucun faux avis, aucune carte rectangulaire. */
+html{scroll-behavior:smooth}
+.section-reveal{content-visibility:auto;contain-intrinsic-size:auto 800px}
+.eyebrow{margin:0;color:#cf9577;font:600 10px 'Outfit',sans-serif;letter-spacing:.28em;line-height:1.6}
+.google-reviews{background:#091e30;color:#f5eee5;padding:clamp(84px,9vw,145px) clamp(24px,6vw,118px) clamp(92px,10vw,156px);position:relative}
+.google-reviews:before{content:"";pointer-events:none;position:absolute;inset:0;background:radial-gradient(ellipse 45% 50% at 85% 30%,#bd816711,transparent);}
+.reviews-top{display:flex;justify-content:space-between;gap:20px;padding-bottom:19px;border-bottom:1px solid #f5eee526;position:relative}
+.reviews-source{font:500 10px 'Outfit',sans-serif;letter-spacing:.16em;color:#9eb0bf}
+.reviews-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,.8fr);gap:clamp(55px,11vw,180px);padding-top:clamp(48px,6vw,97px);align-items:start;position:relative}
+.reviews-heading h2{font:300 clamp(56px,7vw,116px)/1.01 'Outfit',sans-serif;letter-spacing:-.065em;margin:0 0 40px}
+.reviews-heading h2 em{font:400 1.05em/1 var(--font-gold);color:#cb9375;letter-spacing:-.025em}
+.reviews-heading p{font:300 16px/1.9 'DM Sans',sans-serif;max-width:400px;color:#afbec8}
+.reviews-action{border-left:1px solid #f5eee52c;padding-left:clamp(24px,3.5vw,58px);}
+.reviews-location{font:500 11px 'Outfit',sans-serif;letter-spacing:.19em;color:#d1a38c}
+.reviews-score{display:flex;align-items:center;gap:19px;margin:22px 0 14px}
+.reviews-score strong{font:300 clamp(75px,8vw,128px)/1 'Outfit',sans-serif;letter-spacing:-.06em;color:#f5eee5}
+.reviews-score-detail{display:flex;flex-direction:column;gap:10px;font:500 11px 'Outfit',sans-serif;letter-spacing:.1em;color:#d1a38c}
+.reviews-stars{font-size:21px;letter-spacing:3px;line-height:1;color:#d7a482}
+.review-disclaimer{font:300 11px/1.6 'DM Sans',sans-serif;color:#9aaab6;max-width:330px}
+.reviews-links{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:31px}
+.reviews-primary{border-radius:999px;background:#cf9577;color:#091e30;padding:17px 26px;font:600 10px 'Outfit',sans-serif;letter-spacing:.1em;transition:background .25s ease,transform .25s ease;text-align:center;}
+.reviews-primary:hover{background:#e5bba1;transform:translateY(-2px)}
+.reviews-primary span{margin-left:8px}
+.reviews-secondary{border-bottom:1px solid #f5eee575;padding:7px 0;font:500 10px 'Outfit',sans-serif;letter-spacing:.1em;white-space:nowrap}
+.reviews-secondary:hover{color:#d7a482}
+.reviews-help{font:300 12px/1.65 'DM Sans',sans-serif;color:#94a9b7;margin-top:26px}
+@media (max-width:960px){.reviews-layout{gap:30px}.reviews-action{padding-left:25px}}
+@media (max-width:760px){.reviews-top{flex-direction:column;gap:10px}.reviews-layout{grid-template-columns:1fr;gap:42px}.reviews-heading h2{font-size:clamp(57px,14vw,82px);margin-bottom:24px}.reviews-heading p{font-size:15px}.reviews-action{border-left:none;border-top:1px solid #f5eee52c;padding-left:0;padding-top:32px}.reviews-score strong{font-size:90px}.reviews-links{align-items:start;flex-direction:column}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reviews-primary{transition:none}}
+
+/* V11 Raccrod Production signature — gold/white logo on transparent background */
+.raccrod-credit{display:inline-flex;align-items:center;justify-content:center;gap:9px;color:#c3ced3;text-decoration:none;white-space:nowrap;letter-spacing:.09em;transition:opacity .25s ease}
+.raccrod-credit:hover{opacity:.78}
+.raccrod-credit img{display:block;width:110px;height:auto;max-height:44px;object-fit:contain}
+.raccrod-credit .credit-prod{font-size:10px;letter-spacing:.15em;color:#d7b184;font-weight:600;margin-left:-8px}
+@media(max-width:800px){.raccrod-credit{width:100%;margin:5px auto 12px;flex-wrap:wrap}.raccrod-credit img{width:120px}.raccrod-credit .credit-prod{font-size:9px}}
+
+
+/* V14 — header floats above the imagery, NEVER a solid navy band.
+   It only reveals when the visitor has reached the end of the first sequence. */
+.site-header,.site-header.scrolled{background:transparent!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.site-header{opacity:1;transform:translateY(0);transition:opacity .5s ease,transform .6s cubic-bezier(.22,1,.36,1),color .25s ease;will-change:transform,opacity}
+.site-header.header-hidden{opacity:0;transform:translateY(-24px);pointer-events:none;visibility:hidden}
+.site-header.header-visible{opacity:1;transform:translateY(0);pointer-events:auto;visibility:visible}
+.site-header::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.28),transparent);pointer-events:none;transition:opacity .4s ease}
+.site-header.on-light::before{background:linear-gradient(180deg,rgba(245,238,230,.95),rgba(245,238,230,.55) 72%,transparent)}
+.site-header.on-light .desktop-nav a,.site-header.on-light .header-cta{color:#082239;text-shadow:none}
+.site-header.on-light .desktop-nav a:hover{color:#b67b5e}
+.site-header.on-light .brand-modernisee img{filter:drop-shadow(0 1px 1px rgba(0,0,0,.28))}
+.site-header.on-light .header-cta{border-bottom-color:#b67b5e}
+.desktop-nav a,.header-cta{text-shadow:0 1px 8px rgba(0,0,0,.45)}
+/* Cinematic titles: hidden through the film, fade in only during the last 22%. */
+.story-beat.beat-outro{max-width:min(830px,88vw)}
+.story-beat.beat-outro h2{font-size:clamp(54px,7.3vw,112px)}
+.pin-stage .scene-shade{background:linear-gradient(0deg,rgba(3,14,26,.7),transparent 54%),linear-gradient(90deg,rgba(3,14,26,.14),transparent 64%)}
+@media(max-width:800px){
+  .site-header{height:75px}.brand-modernisee{width:clamp(104px,29vw,155px)}
+  .header-cta{white-space:normal;text-align:right;max-width:145px;font-size:9px}
+  .story-beat.beat-outro{bottom:clamp(90px,15svh,175px);max-width:88vw}
+  .story-beat.beat-outro h2{font-size:clamp(43px,10.5vw,72px);line-height:1.05}
+  .pin-stage .scene-shade{background:linear-gradient(0deg,rgba(3,14,26,.84) 0%,rgba(3,14,26,.34) 34%,transparent 80%)}
+}
+@media(prefers-reduced-motion:reduce){.site-header{transition:none}}
+
+
+/* V15 — identité et horaires officiels transmis par La Fab’ d’Optique. */
+.brand.brand-modernisee{min-width:0;width:clamp(178px,17vw,264px);max-width:33vw;flex:none}
+.brand.brand-modernisee img{display:block;height:auto;width:100%;object-fit:contain;object-position:left center;filter:drop-shadow(0 1px 8px rgba(0,0,0,.2))}
+.footer-brand img{content:url('assets/logo-fab-officiel-wordmark.png');height:auto;max-width:210px;max-height:65px;object-fit:contain}
+.about-logo-panel img{width:min(74%,340px)!important;max-width:340px;max-height:360px;object-fit:contain;filter:drop-shadow(0 12px 40px rgba(0,0,0,.15))}
+/* Echo of the typewriter-like d’Optique lettering in the supplied official logo. */
+.opening-hours{background:var(--cream);color:var(--navy);display:grid;grid-template-columns:.9fr 1.1fr;padding:clamp(80px,9vw,156px) clamp(26px,8vw,148px);gap:clamp(45px,7vw,135px)}
+.opening-head{display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.opening-head h2{font:300 clamp(62px,7.5vw,116px)/1.04 'Outfit',sans-serif;letter-spacing:-.055em;margin:14px 0 28px}
+.opening-head h2 em{font-family:'Courier Prime',monospace;font-style:normal;font-weight:400;letter-spacing:-.09em;color:var(--copper)}
+.opening-head>p:not(.kicker){font-size:clamp(15px,1.3vw,18px);font-weight:300;line-height:1.85;max-width:420px;color:#45566a}
+.opening-signature{width:170px;height:auto;object-fit:contain;margin-top:28px}
+.opening-schedule{align-self:center;max-width:710px;width:100%}
+.opening-schedule-top{display:flex;justify-content:space-between;gap:10px;padding-bottom:21px;border-bottom:1px solid #12304755;color:#8d6757;font:500 10px 'DM Sans',sans-serif;letter-spacing:.18em}
+.opening-schedule dl{margin:0 0 30px;padding:0}
+.hours-line{display:flex;align-items:baseline;justify-content:space-between;gap:25px;padding:25px 0;border-bottom:1px solid #15344b25}
+.hours-line dt{font:400 clamp(18px,2vw,25px)/1.35 'Courier Prime',monospace;letter-spacing:-.02em}
+.hours-line dd{display:flex;flex-direction:column;align-items:flex-end;gap:5px;margin:0;text-align:right}
+.hours-line dd span{font:500 clamp(17px,2vw,24px)/1.3 'Outfit',sans-serif;letter-spacing:-.03em}
+.hours-line dd small{font:400 12px 'DM Sans',sans-serif;color:#697782}
+.opening-caption{color:#445363;font:300 15px/1.65 'DM Sans',sans-serif;margin:0 0 28px}
+.opening-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+.opening-reserve{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:16px 23px;border-radius:999px;background:var(--navy);color:#fff9f4;font:600 10px 'DM Sans',sans-serif;letter-spacing:.09em;transition:background .2s,transform .2s}
+.opening-reserve:hover{background:#294b68;transform:translateY(-2px)}
+.opening-phone{border-bottom:1px solid #b77d62;padding:11px 3px;color:var(--navy);font:500 14px 'DM Sans',sans-serif}
+.opening-email{margin-top:18px;color:#6a7885;font-size:12px}
+.opening-email a{border-bottom:1px solid #c9947999}
+.contact h2 em,.section-heading h2 em,.story-divider h2 em{font-family:'Courier Prime',monospace;letter-spacing:-.08em}
+@media(max-width:1060px){.opening-hours{grid-template-columns:1fr;gap:38px}.opening-head h2{font-size:clamp(56px,10vw,95px)}.opening-signature{width:140px}}
+@media(max-width:800px){.brand.brand-modernisee{width:160px;max-width:47vw}.site-header{gap:14px}.header-cta{font-size:9px;text-align:right;max-width:148px}.opening-hours{padding:88px 7% 92px;gap:25px}.opening-head h2{font-size:clamp(52px,11vw,73px)}.opening-signature{width:115px;margin-top:12px}.opening-schedule-top{font-size:8px;letter-spacing:.11em}.hours-line{padding:22px 0;gap:12px}.hours-line dt{font-size:17px}.hours-line dd span{font-size:18px}.opening-actions{flex-direction:column;align-items:stretch}.opening-reserve{text-align:center}.opening-phone{align-self:center}.opening-email{text-align:center}}
+@media(max-width:390px){.brand.brand-modernisee{width:139px}.header-cta{max-width:132px;font-size:8px}.hours-line dt{font-size:15px}}
+@media(prefers-reduced-motion:reduce){.opening-reserve{transition:none}}
+
+/* V17 — Accueil : lecture automatique unique, sans lien avec le scroll. */
+.scroll-scene.is-hero.hero-once{height:100vh;height:100svh;min-height:400px;}
+.hero-once .pin-stage{position:relative;top:auto;height:100%;min-height:400px;}
+.hero-once .video-fallback.hero-autoplay{display:block;opacity:1;z-index:1;object-fit:cover;pointer-events:none;}
+.hero-once .scene-shade{z-index:2;}
+.hero-once .story-beat{z-index:5;}
+.hero-once .intro-play-button{position:absolute;left:50%;bottom:clamp(34px,8vh,95px);transform:translateX(-50%);z-index:10;border:1px solid rgba(249,235,220,.8);color:#fffaf1;background:rgba(6,26,44,.75);border-radius:100px;padding:16px 24px;font:600 12px 'DM Sans',sans-serif;letter-spacing:.12em;white-space:nowrap;cursor:pointer;backdrop-filter:blur(7px);}
+.hero-once .intro-play-button[hidden]{display:none!important;}
+@media(max-width:800px){.scroll-scene.is-hero.hero-once{height:100svh;min-height:0}.hero-once .pin-stage{height:100svh;min-height:0}}
+
+
+/* V18 — Typographie inspirée du mot « d’Optique » sur le logo officiel.
+   Le PDF d'origine présente le lettrage comme un visuel, sans fonte embarquée.
+   Courier Prime est une police typewriter proche du style, avec un repli typographique standard en cas de problème de chargement. */
+:root {
+  --font-optique:'Courier Prime','Courier New',monospace;
+  --font-gold:var(--font-optique);
+}
+body,
+body :is(h1,h2,h3,h4,h5,h6,p,span,small,a,button,dt,dd,li,label,strong,b,em,time,blockquote) {
+  font-family:var(--font-optique)!important;
+}
+body { font-weight:400; }
+body :is(p,small,dd) { letter-spacing:-.015em; }
+/* Navigation et liens : réduire l'espacement pour conserver la place sur mobile. */
+.desktop-nav {gap:clamp(12px,1.5vw,28px)}
+.desktop-nav a {font-size:12px;letter-spacing:.015em;line-height:1.5;}
+.header-cta {font-size:11px;letter-spacing:.01em;line-height:1.4;}
+.kicker,.eyebrow,.opening-schedule-top,.reviews-source,.reviews-location,
+.brand-card .brand-count,.brand-count,.about-services span,.map-direction,
+.reviews-primary,.reviews-secondary,.opening-reserve,.opening-phone,
+.contact-actions a,footer,.story-divider>span:first-child {
+  letter-spacing:.035em;
+}
+.kicker,.eyebrow {font-size:clamp(10px,.95vw,13px);line-height:1.6;}
+/* Titre vintage typewriter : même silhouette de lettres que « d’Optique ». */
+.story-beat h1,.story-beat h2,.story-beat.beat-outro h2,
+.story-divider h2,.section-heading h2,.about-content h2,.contact h2,
+.reviews-heading h2,.opening-head h2,.map-intro h2 {
+  font-weight:400;
+  letter-spacing:-.062em;
+  line-height:1.12;
+  overflow-wrap:normal;
+  text-wrap:balance;
+}
+.story-beat h1,.story-beat h2,.story-beat.beat-outro h2 {
+  font-size:clamp(46px,6.35vw,106px);
+}
+.story-divider h2,.section-heading h2,.contact h2 {
+  font-size:clamp(44px,6.1vw,103px);
+}
+.about-content h2,.opening-head h2,.map-intro h2,.reviews-heading h2 {
+  font-size:clamp(42px,5.4vw,87px);
+}
+.story-beat h2 em,.story-beat h1 em,.story-divider h2 em,.section-heading h2 em,
+.about-content h2 em,.contact h2 em,.opening-head h2 em,.map-intro h2 em,.reviews-heading h2 em {
+  font-weight:400;
+  font-style:normal;
+  letter-spacing:-.07em;
+  line-height:1.12;
+}
+.beat-description,.about-content>p:not(.kicker),.section-heading>p:last-child,
+.reviews-heading p,.opening-head>p:not(.kicker),.contact .address {
+  font-size:clamp(14px,1.3vw,18px);
+  line-height:1.8;
+}
+.hours-line dt {letter-spacing:-.035em}
+.hours-line dd span {letter-spacing:-.035em}
+/* N'alourdit pas les animations scroll : changements de police CSS uniquement. */
+@media(max-width:800px) {
+  .story-beat h1,.story-beat h2,.story-beat.beat-outro h2 {
+    font-size:clamp(38px,9vw,66px);
+    letter-spacing:-.07em;
+    line-height:1.13;
+  }
+  .story-divider h2,.section-heading h2,.contact h2,.reviews-heading h2 {
+    font-size:clamp(38px,9vw,67px);
+    line-height:1.15;
+  }
+  .about-content h2,.opening-head h2,.map-intro h2 {
+    font-size:clamp(37px,8vw,65px);
+  }
+  .header-cta {font-size:9px;letter-spacing:0;}
+  .kicker {font-size:10px;letter-spacing:.025em;}
+  .beat-description {font-size:14px;line-height:1.65;}
+  .hours-line dt{font-size:clamp(14px,3.9vw,18px)}
+  .hours-line dd span{font-size:clamp(15px,4vw,20px)}
+}
+@media(max-width:390px) {
+  .story-beat h1,.story-beat h2,.story-beat.beat-outro h2{font-size:clamp(35px,8.7vw,44px);}
+  .contact h2,.reviews-heading h2{font-size:clamp(34px,8.6vw,48px);}
+  .header-cta{font-size:8px;max-width:125px;}
+}
+
+/* Updated catalogue: readable categories on desktop and mobile. */
+.brand-categories{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,65px)}
+.brand-category{padding:28px 0;border-top:1px solid #ffffff43;min-width:0}
+.brand-category h3{font:500 clamp(23px,2.5vw,34px) 'Outfit',sans-serif;color:var(--copper);margin:0 0 25px}
+.brand-category ul{list-style:none;margin:0;padding:0;display:grid;gap:13px}
+.brand-category li{font:400 clamp(15px,1.4vw,19px)/1.5 'DM Sans',sans-serif;color:#f3f4f5;overflow-wrap:anywhere}
+.lens-partner{position:relative;text-align:center;margin-top:50px;padding-top:40px;border-top:1px solid #ffffff43}
+.lens-partner h3{font:500 clamp(28px,4vw,48px) 'Outfit',sans-serif;letter-spacing:.08em;margin:15px 0 0}
+#histoire{scroll-margin-top:100px}
+@media(max-width:700px){.brand-categories{grid-template-columns:1fr;gap:10px}.brand-category{padding:26px 0}.brand-category ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 20px}.brand-category h3{margin-bottom:20px}}
+@media(max-width:360px){.brand-category ul{grid-template-columns:1fr}}
